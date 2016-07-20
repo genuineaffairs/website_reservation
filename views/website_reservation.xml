@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp> 
+<data>
+
+<template id="reservation_form" name="Reservation Form" inherit_id="website_crm.contactus_form" customize_show="True">
+        <!-- Add JavaScript to webpage -->
+        <xpath expr="//form" postion="inside">
+                <script>
+                function validateDates(){
+                        var checkin = document.forms["form"]["checkin"].value;
+                        var checkout = document.forms["form"]["checkout"].value;
+                        if( checkin > checkout){
+                                window.alert("Check-out date has to be greater than check-in date.");
+                                return false;
+                        }
+                        return true;
+                }
+                </script>
+        </xpath>
+        <!-- Add onsubmit for JavaScript and name attribute to form -->
+        <xpath expr="//form" position="attributes">
+                <attribute name="name">form</attribute>
+                <attribute name="onsubmit">return validateDates()</attribute>
+        </xpath>
+
+	<!-- Edit form fields -->
+	<xpath expr="//div[@name='email_from_container']" position="after">
+
+	<!-- Add country dropdown-list -->
+          <div t-attf-class="form-group">
+                <label class="col-md-3 col-sm-4 control-label" for="country_id">Country</label>
+                <div class="col-md-7 col-sm-8">
+                    <select class="form-control" name="country_id" >
+                        <t t-foreach="countries" t-as="country">
+                                <option><t t-esc="country.name" /></option>
+                        </t>
+                    </select>
+                </div>
+            </div>
+
+	<!-- Check-in and check-out fields -->
+	   <div t-attf-class="form-group">
+		<label class="col-md-3 col-sm-4 control-label" for="checkin">Check-in</label>
+		<div class="col-md-4 col-sm-4">
+		    <input type="date" class="form-control" name="checkin" required="True" />
+		</div>
+	   </div>
+	   <div t-attf-class="form-group">
+		<label class="col-md-3 col-sm-4 control-label" for="checkout">Check-out</label>
+		<div class="col-md-4 col-sm-4">
+		   <input type="date" class="form-control" name="checkout" required="True" />
+		</div>
+	   </div>
+
+	<!-- Nr of persons field -->
+          <div t-attf-class="form-group">
+                <label class="col-md-3 col-sm-4 control-label" for="persons">Adults</label>
+                <div class="col-md-2 col-sm-2">
+                    <select class="form-control" name="nr_adults" >
+                        <t t-foreach="range(9)" t-as="index">
+                                <option><t t-esc="index" /></option>
+                        </t>
+                    </select>
+                </div>
+                <label class="col-md-2 col-sm-2 control-label" for="persons">Children</label>
+                <div class="col-md-2 col-sm-2">
+                    <select class="form-control" name="nr_children" >
+                        <t t-foreach="range(9)" t-as="index">
+                                <option><t t-esc="index" /></option>
+                        </t>
+                    </select>
+                </div>
+            </div>
+	
+
+        <!-- Set subject in crm.lead to 'Reservation'  -->
+	<div t-attf-class="form-group">
+           <div class="col-md-7 col-sm-8">
+             <input type="hidden" class="form-control" name="name" t-attf-value="Reservation" />
+            </div>
+        </div>
+
+	</xpath>
+</template>
+	
+</data>
+</openerp>

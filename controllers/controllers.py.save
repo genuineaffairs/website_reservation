@@ -1,0 +1,4 @@
+from openerp import http
+
+class rooms(http.Controllers):
+	@http.route(['/page/contactus/

@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<openerp>
+<data>
+
+	<record model="ir.ui.view" id="view_hotel_reservation_form_lead">
+	<field name="name">hotel.reservation.form</field>
+	<field name="model">hotel.reservation</field>
+	<field name="inherit_id" ref="hotel_reservation.view_hotel_reservation_form" />
+	<field name="arch" type="xml">
+		<xpath expr="//field[@name='dummy']" position="before">
+			<group colspan="4">
+			<field name="crm_message"  readonly="1"  />
+			</group>
+		</xpath>
+	</field>
+	</record>
+</data>
+</openerp>

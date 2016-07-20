@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+	<!-- Edit crm.lead tree view -->
+        <record model="ir.ui.view" id="crm_lead_tree_view_reservations">
+        <field name="name">Reservations Tree View</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_leads" />
+        <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                        <field name="checkin" />
+                        <field name="checkout" />
+                </xpath>
+                <xpath expr="//field[@name='contact_name']" position="after">
+                        <field name="nr_adults" />
+                        <field name="nr_children" />
+                </xpath>
+		<xpath expr="//field[@name='partner_assigned_id']" position="attributes">
+			<attribute name="invisible">1</attribute>
+		</xpath>
+        </field>
+        </record>
+
+	<!-- Edit crm.lead form view -->
+        <record model="ir.ui.view" id="crm_case_form_view_reservations">
+        <field name="name">Reservations Form View</field>
+        <field name="model">crm.lead</field>
+	<field name="inherit_id" ref="crm.crm_case_form_view_leads" />
+        <field name="arch" type="xml">
+		<!-- Replace convert button to a confirm reservation button -->
+                <xpath expr="//button[@string='Convert to Opportunity']" position="replace">
+                    <button name="confirm" string="Confirm reservation" type="object"
+                            help="Confirm reservation" class="oe_highlight" />
+                </xpath>
+	</field>
+	</record>
+
+</data>
+</openerp>
+
