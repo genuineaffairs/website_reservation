@@ -26,13 +26,15 @@
 	<field name="inherit_id" ref="crm.crm_case_form_view_leads" />
         <field name="arch" type="xml">
 		<!-- Replace convert button to a confirm reservation button -->
-                <xpath expr="//button[@string='Convert to Opportunity']" position="replace">
+                <xpath expr="//from[@string='Leads Form']" position="replace">
+					<header>
                     <button name="confirm" string="Confirm reservation" type="object"
                             help="Confirm reservation" class="oe_highlight" />
+					</header>
                 </xpath>
-		<!-- Edit form to delete unncesessary fields for reservations and events -->
+		<!-- Edit form to delete unncesessary fields for reservations and events 
 				<xpath expr="//div[@name='buttons']" position="replace">
-				</xpath>
+				</xpath>-->
 	</field>
 	</record>
 
