@@ -30,6 +30,9 @@
                     <button name="confirm" string="Confirm reservation" type="object"
                             help="Confirm reservation" class="oe_highlight" />
                 </xpath>
+		<!-- Edit form to delete unncesessary fields for reservations and events -->
+				<xpath expr="//oe_right_button_box[@name='buttons']" position="replace">
+				</xpath>
 	</field>
 	</record>
 
