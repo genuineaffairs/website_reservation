@@ -74,9 +74,9 @@
 			
 		<!-- Add roomtype dropdown-list -->
           <div t-attf-class="form-group">
-                <label class="col-md-3 col-sm-4 control-label" for="roomtype">Room</label>
+                <label class="col-md-3 col-sm-4 control-label" for="room">Room</label>
                 <div class="col-md-7 col-sm-8">
-                    <select class="form-control" name="roomtype" >
+                    <select class="form-control" name="room" >
                         <t t-foreach="roomtypes" t-as="roomtype">
                                 <option><t t-esc="roomtype.name" /></option>
                         </t>

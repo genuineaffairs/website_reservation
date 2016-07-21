@@ -51,6 +51,7 @@
 						<field name="nr_children" attrs="{'invisible': [('name','!=', 'Reservation')]}" />
 					</group>
 					<group>
+						<field name="room" attrs="{'invisible': [('name','!=', 'Reservation')]}" readonly="1" />
 						<field name="description" attrs="{'invisible': [('name','!=', 'Reservation')]}" readonly="1" />
 					</group>
 				</group>

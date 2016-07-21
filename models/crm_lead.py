@@ -10,6 +10,7 @@ class crm_lead(models.Model):
 	checkout = fields.Date('Check-out')
 	nr_adults = fields.Integer(default=0, string="Adults")
 	nr_children = fields.Integer(default=0, string="Children")
+	room = fields.Char('Requested room')
 
 	# Confirm reservation
 	# Opens a popup-window with the hotel.reservation form view with default-values from reservation-lead
@@ -34,6 +35,7 @@ class crm_lead(models.Model):
 					'default_pricelist_id': self.env['product.pricelist'].search([('currency_id','=', CLP_id)]).id,
 					'default_partner_id': newGuestID,
 					'default_crm_message': self.description,
+					'default_requested_room': self.room,
 				},
 		}
 		
