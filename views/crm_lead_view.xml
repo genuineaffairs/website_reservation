@@ -25,16 +25,27 @@
         <field name="model">crm.lead</field>
 	<field name="inherit_id" ref="crm.crm_case_form_view_leads" />
         <field name="arch" type="xml">
-		<!-- Replace convert button to a confirm reservation button -->
-                <xpath expr="//form[@string='Leads Form']" position="replace">
-					<header>
-                    <button name="confirm" string="Confirm reservation" type="object"
-                            help="Confirm reservation" class="oe_highlight" />
-					</header>
-                </xpath>
-		<!-- Edit form to delete unncesessary fields for reservations and events 
-				<xpath expr="//div[@name='buttons']" position="replace">
-				</xpath>-->
+			<!-- Replace the current form view -->
+            <xpath expr="//form[@string='Leads Form']" position="replace">
+			<header>
+				<button name="confirm" string="Confirm reservation" type="object"
+                        help="Confirm reservation" class="oe_highlight" />
+			</header>
+			<sheet>
+				<div class="oe_title">
+					<label for="name" class="oe_edit_only" />
+					<h1><field name="name" placeholder="Lead type" /></h1>
+				</div>
+				<group>
+					<group>
+						<field name="contact_name" />
+						<field name="email_from" widget="email" />
+						<field name="phone" />
+						<field name="country_id" />
+					</group>
+				</group>
+			</sheet>
+            </xpath>
 	</field>
 	</record>
 
