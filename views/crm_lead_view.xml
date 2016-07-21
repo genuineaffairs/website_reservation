@@ -51,9 +51,8 @@
 						<field name="nr_children" attrs="{'invisible': [('name','!=', 'Reservation')]}" />
 					</group>
 					<group>
-						<label for="description" string="Message">
+						<label for="description" string="Message" />
 						<field name="description" attrs="{'invisible': [('name','!=', 'Reservation')]}" readonly="1" />
-						</label>
 					</group>
 				</group>
 			</sheet>
