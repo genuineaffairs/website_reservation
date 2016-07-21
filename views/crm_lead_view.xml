@@ -27,6 +27,7 @@
         <field name="arch" type="xml">
 			<!-- Replace the current form view -->
             <xpath expr="//form[@string='Leads Form']" position="replace">
+			<form>
 			<header>
 				<button name="confirm" string="Confirm reservation" type="object"
                         help="Confirm reservation" class="oe_highlight" />
@@ -45,6 +46,7 @@
 					</group>
 				</group>
 			</sheet>
+			</form>
             </xpath>
 	</field>
 	</record>
