@@ -4,16 +4,16 @@ from openerp.addons.website_crm.controllers.main import contactus
 
 class website_reservation(contactus):
 	#Edit contact method to route additional records to contactus-page
-        @http.route(['/page/website.contactus', '/page/contactus'], type='http', auth="public", website=True)
-        def contact(self, **kwargs):
+	@http.route(['/page/website.contactus', '/page/contactus'], type='http', auth="public", website=True)
+		def contact(self, **kwargs):
 			values = {}
-            for field in ['description', 'partner_name', 'phone', 'contact_name', 'email_from', 'name']:
-                if kwargs.get(field):
-                    values[field] = kwargs.pop(field)
-            values.update(kwargs=kwargs.items())
+			for field in ['description', 'partner_name', 'phone', 'contact_name', 'email_from', 'name']:
+				if kwargs.get(field):
+					values[field] = kwargs.pop(field)
+			values.update(kwargs=kwargs.items())
 			# Add res.country to routed values 
 			Countries = http.request.env['res.country']
-            values.update({'countries': Countries.search([])})
+			values.update({'countries': Countries.search([])})
 			# Add hotel.room.type to touted values
 			Roomtypes = http.request.env['hotel.room.type']
 			values.update({'roomtypes': Roomtypes.search([])})
