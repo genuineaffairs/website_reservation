@@ -10,7 +10,7 @@
 		<xpath expr="//field[@name='dummy']" position="before">
 			<group colspan="4">
 			<field name="requested_room"  readonly="1" attrs="{'invisible': [('state','!=', 'draft')]}" />
-			<field name="crm_message"  readonly="1"  />
+			<field name="crm_message"  readonly="1" attrs="{'invisible': [('state','!=', 'draft')]}" />
 			</group>
 		</xpath>
 	</field>
