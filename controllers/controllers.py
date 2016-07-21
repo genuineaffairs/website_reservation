@@ -11,11 +11,14 @@ class website_reservation(contactus):
                         if kwargs.get(field):
                                 values[field] = kwargs.pop(field)
                 values.update(kwargs=kwargs.items())
-		#Add res.country to routed values 
+				#Add res.country to routed values 
                 Countries = http.request.env['res.country']
                 values.update({'countries': Countries.search([])})
-
-		return http.request.website.render("website.contactus", values)
+				# Add hotel.room.type to touted values
+				Roomtypes = http.request.env['hotel.room.type']
+				values.update({'roomtypes': Roomtypes.search([])})
+				
+				return http.request.website.render("website.contactus", values)
 
 	#Edit create_lead method to add extra functionality
 	def create_lead(self, request, values, kwargs):
