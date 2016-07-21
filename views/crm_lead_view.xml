@@ -50,9 +50,11 @@
 						<field name="nr_adults" attrs="{'invisible': [('name','!=', 'Reservation')]}" />
 						<field name="nr_children" attrs="{'invisible': [('name','!=', 'Reservation')]}" />
 					</group>
-					<label for="description" string="Reservation message">
-						<field name="description" attrs="{'invisible': [('name','!=', 'Reservation')]}" />
-					</label>
+					<group colspan="4">
+						<label for="description" string="Reservation message">
+						<field name="description" attrs="{'invisible': [('name','!=', 'Reservation')]}" readonly="1" />
+						</label>
+					</group>
 				</group>
 			</sheet>
 			</form>
