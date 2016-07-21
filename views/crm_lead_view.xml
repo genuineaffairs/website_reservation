@@ -52,6 +52,9 @@
 					</group>
 					<group>
 						<field name="room" attrs="{'invisible': [('name','!=', 'Reservation')]}" readonly="1" />
+						<xpath expr="//field@[name='description']" position="attributes">
+							<attribute string="Message">
+						</xpath>
 						<field name="description" attrs="{'invisible': [('name','!=', 'Reservation')]}" readonly="1" />
 					</group>
 				</group>
