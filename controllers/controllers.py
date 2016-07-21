@@ -15,10 +15,10 @@ class website_reservation(contactus):
                 Countries = http.request.env['res.country']
                 values.update({'countries': Countries.search([])})
 				# Add hotel.room.type to touted values
-				Roomtypes = http.request.env['hotel.room.type']
-				values.update({'roomtypes': Roomtypes.search([])})
+			Roomtypes = http.request.env['hotel.room.type']
+			values.update({'roomtypes': Roomtypes.search([])})
 				
-				return http.request.website.render("website.contactus", values)
+			return http.request.website.render("website.contactus", values)
 
 	#Edit create_lead method to add extra functionality
 	def create_lead(self, request, values, kwargs):
