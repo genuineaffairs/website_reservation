@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_hotel_room_public,hotel.room.public,model_hotel_room,base.group_public,1,0,0,0
+access_hotel_reservation_public,hotel.reservation.public,model_hotel_reservation,base.group_public,1,0,0,0

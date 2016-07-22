@@ -5,5 +5,6 @@
 	'depends' : ['website_crm','hotel_reservation'],
 	'data' : ['views/website_reservation.xml', 
 				'views/crm_lead_view.xml', 
-				'views/hotel_reservation_view.xml'],
+				'views/hotel_reservation_view.xml',
+				'security/ir.model.access.csv'],
 }
