@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hotel_room_type_user,hotel.room.type.user,model_hotel_room_type,base.group_user,1,0,0,0
+access_hotel_room_type_public,hotel.room.type.public,model_hotel_room_type,base.group_public,1,0,0,0
