@@ -20,13 +20,13 @@ class crm_lead(models.Model):
 		# Get currency id for Chilean pesos
 		CLP_id = self.env['res.currency'].search([('name','=','CLP')]).id
 		#Convert date to datetime-format
-		temp_checkin = fields.Datetime.to_string(self.checkin)
-		temp_checkout = fields.Datetime.to_string(self.checkout)
+		temp_checkin = fields.Datetime.from_string(self.checkin + " 12:00:00")
+		temp_checkout = fields.Datetime.from_string(self.checkout + " 12:00:00")
 		#konvertera variabl till dattime?
 		print "TESTING"
 		print temp_checkin
 		print temp_checkout
-		test= datetime.strptime(self.checkin, '%Y-%m-%d')
+		print datetime.strptime(self.checkin, '%Y-%m-%d').fromutctimestamp()
 		# Create a new partner from customer information
 		newGuestID = self.env['res.partner'].create({'name':self.contact_name, 'phone':self.phone, 'email':self.email_from, 'country_id': int(self.country_id), 'type':0 }).id
 
@@ -39,7 +39,7 @@ class crm_lead(models.Model):
 			'target': 'new',
 			'context': {	'default_adults': self.nr_adults,
 					'default_children' : self.nr_children,
-					'default_checkin': test,	
+					'default_checkin': self.checkin,	
 					'default_checkout': self.checkout,
 					'default_pricelist_id': self.env['product.pricelist'].search([('currency_id','=', CLP_id)]).id,
 					'default_partner_id': newGuestID,
