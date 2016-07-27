@@ -26,7 +26,7 @@ class crm_lead(models.Model):
 		print "TESTING"
 		print temp_checkin
 		print temp_checkout
-		print datetime.strptime(self.checkin, '%Y-%m-%d %H-%M-%S %f')
+		print datetime.strptime(self.checkin, '%Y-%m-%d %H:%M:%S.%f')
 		# Create a new partner from customer information
 		newGuestID = self.env['res.partner'].create({'name':self.contact_name, 'phone':self.phone, 'email':self.email_from, 'country_id': int(self.country_id), 'type':0 }).id
 
