@@ -1,4 +1,5 @@
 from openerp import models, fields
+import time
 
 class HotelReservation(models.Model):
 	_inherit = 'hotel.reservation'
