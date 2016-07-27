@@ -20,7 +20,8 @@ class crm_lead(models.Model):
 		# Get currency id for Chilean pesos
 		CLP_id = self.env['res.currency'].search([('name','=','CLP')]).id
 		#Convert date to datetime-format
-		temp_checkin = fields.Datetime.from_string(self.checkin + " 12:00:00")
+		test = datetime.strftime(temp_checkin, '%Y-%m-%d %H:%M:%S.%f')
+		temp_checkin = fields.Datetime.from_string(test)
 		temp_checkout = fields.Datetime.from_string(self.checkout + " 12:00:00")
 		#konvertera variabl till dattime?
 		print "TESTING"
