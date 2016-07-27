@@ -8,7 +8,7 @@ class HotelReservation(models.Model):
 	requested_room = fields.Char('Requested room')
 	# Override checkin and checkout field to change them
 	# to date-fields instead of datetime
-	checkin = fields.Date('Expected-Date-Arrival', required=True,
-							readonly=True, states={'draft': [('readonly',False)]})
-	checkout = fields.Date('Expected-Date-Departure', required=True,
-							readonly=True, states={'draft': [('readonly',False)]})
+#	checkin = fields.Date('Expected-Date-Arrival', required=True,
+#							readonly=True, states={'draft': [('readonly',False)]})
+#	checkout = fields.Date('Expected-Date-Departure', required=True,
+#							readonly=True, states={'draft': [('readonly',False)]})
