@@ -1,4 +1,6 @@
 from openerp import models, fields
+#Imports for date_order field
+from openerp.tools import DEFAULT_SERVER_DATETIME_FORMAT
 import time
 
 class HotelReservation(models.Model):
