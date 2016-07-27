@@ -26,7 +26,7 @@ class crm_lead(models.Model):
 		print "TESTING"
 		print temp_checkin
 		print temp_checkout
-		print datetime.strptime(self.checkin, '%Y-%m-%d')
+		test= datetime.strptime(self.checkin, '%Y-%m-%d')
 		# Create a new partner from customer information
 		newGuestID = self.env['res.partner'].create({'name':self.contact_name, 'phone':self.phone, 'email':self.email_from, 'country_id': int(self.country_id), 'type':0 }).id
 
@@ -39,7 +39,7 @@ class crm_lead(models.Model):
 			'target': 'new',
 			'context': {	'default_adults': self.nr_adults,
 					'default_children' : self.nr_children,
-					'default_checkin': self.checkin,	
+					'default_checkin': test,	
 					'default_checkout': self.checkout,
 					'default_pricelist_id': self.env['product.pricelist'].search([('currency_id','=', CLP_id)]).id,
 					'default_partner_id': newGuestID,
