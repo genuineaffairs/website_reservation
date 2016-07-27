@@ -21,7 +21,7 @@ class crm_lead(models.Model):
 		#Convert date to datetime-format
 		temp_checkin = fields.Datetime.from_string(str(self.checkin) + " 12:00:00")
 		temp_checkout = fields.Datetime.from_string(str(self.checkout) + " 12:00:00")
-		print TESTING
+		print "TESTING"
 		print temp_checkin
 		print temp_checkout
 		# Create a new partner from customer information
