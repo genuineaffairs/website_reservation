@@ -18,6 +18,9 @@ class crm_lead(models.Model):
 	def confirm(self):
 		# Get currency id for Chilean pesos
 		CLP_id = self.env['res.currency'].search([('name','=','CLP')]).id
+		#Convert date to datetime-format
+		temp_checkin = fields.Datetime(self.checkin + "12:00")
+		temp_checkout = fields.Datetime(self.checkout + "12:00")
 		# Create a new partner from customer information
 		newGuestID = self.env['res.partner'].create({'name':self.contact_name, 'phone':self.phone, 'email':self.email_from, 'country_id': int(self.country_id), 'type':0 }).id
 
@@ -30,8 +33,8 @@ class crm_lead(models.Model):
 			'target': 'new',
 			'context': {	'default_adults': self.nr_adults,
 					'default_children' : self.nr_children,
-					'default_checkin': self.checkin,	
-					'default_checkout': self.checkout,
+					'default_checkin': temp_checkin,	
+					'default_checkout': temp_checkout,
 					'default_pricelist_id': self.env['product.pricelist'].search([('currency_id','=', CLP_id)]).id,
 					'default_partner_id': newGuestID,
 					'default_crm_message': self.description,
