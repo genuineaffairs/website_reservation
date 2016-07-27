@@ -13,10 +13,9 @@
 			<field name="crm_message"  readonly="1" attrs="{'invisible': [('state','!=', 'draft')]}" />
 			</group>
 		</xpath>
-		<!--
 		<xpath expr="//field[@name='checkin']" position="attributes">
 			<attribute name="widget">date</attribute>
-		</xpath> -->
+		</xpath>
 		<xpath expr="//field[@name='checkout']" position="attributes">
 			<attribute name="widget">date</attribute>
 		</xpath>
