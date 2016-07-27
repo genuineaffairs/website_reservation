@@ -19,7 +19,7 @@ class crm_lead(models.Model):
 		# Get currency id for Chilean pesos
 		CLP_id = self.env['res.currency'].search([('name','=','CLP')]).id
 		#Convert date to datetime-format
-		temp_checkin = fields.Datetime.from_string(str(self.checkin) + " 12:00:00")
+		temp_checkin = fields.Datetime.to_string(str(self.checkin) + " 12:00:00")
 		temp_checkout = fields.Datetime.from_string(str(self.checkout) + " 12:00:00")
 		print "TESTING"
 		print temp_checkin
