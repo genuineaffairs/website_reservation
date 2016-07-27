@@ -13,3 +13,8 @@ class HotelReservation(models.Model):
 	date_order = fields.Date('Date Ordered',required=True,readonly=True,
 							states={'draft':[('readonly',False)]}, 
 							default=(lambda *a: time.strftime(DEFAULT_SERVER_DATETIME_FORMAT)))
+							
+class RoomReservationSummary(models.Model):
+	_inherit = 'room.reservation.summary'
+	date_from = fields.Date('Date From')
+	date_to = fields.Date('Date To')
