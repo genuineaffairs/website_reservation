@@ -24,8 +24,8 @@ class website_reservation(contactus):
 	def create_lead(self, request, values, kwargs):
 		cr, context = request.cr, request.context
                 # Convert country_id string-value from form to a record id
-                country_id = request.registry['res.country'].search(cr, SUPERUSER_ID,[('name','=', values['country_id'] )])[0]
-		values.update({'country_id': country_id})
+                #country_id = request.registry['res.country'].search(cr, SUPERUSER_ID,[('name','=', values['country_id'] )])[0]
+		#values.update({'country_id': country_id})
 
 	      	return request.registry['crm.lead'].create(cr, SUPERUSER_ID, values, context=dict(context, mail_create_nosubscribe=True))
 

@@ -32,7 +32,7 @@
                 <div class="col-md-7 col-sm-8">
                     <select class="form-control" name="country_id" >
                         <t t-foreach="countries" t-as="country">
-                                <option><t t-esc="country.name" /></option>
+                                <option t-att-value="country.id"><t t-esc="country.name" /></option>
                         </t>
                     </select>
                 </div>
