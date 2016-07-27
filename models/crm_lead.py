@@ -21,12 +21,12 @@ class crm_lead(models.Model):
 		CLP_id = self.env['res.currency'].search([('name','=','CLP')]).id
 		#Convert date to datetime-format
 		temp_checkin = fields.Datetime.from_string(self.checkin + " 12:00:00")
-		temp_checkout = fields.Datetime.from_string(str(self.checkout) + " 12:00:00")
+		temp_checkout = fields.Datetime.from_string(self.checkout + " 12:00:00")
 		#konvertera variabl till dattime?
 		print "TESTING"
 		print temp_checkin
 		print temp_checkout
-		print datetime.utcfromtimestamp(self.checkin)
+		print datetime.now()
 		# Create a new partner from customer information
 		newGuestID = self.env['res.partner'].create({'name':self.contact_name, 'phone':self.phone, 'email':self.email_from, 'country_id': int(self.country_id), 'type':0 }).id
 
