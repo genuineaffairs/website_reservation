@@ -57,7 +57,7 @@
                 <label class="col-md-3 col-sm-4 control-label" for="persons">Adults</label>
                 <div class="col-md-2 col-sm-2">
                     <select class="form-control" name="nr_adults" >
-                        <t t-foreach="range(9)" t-as="index">
+                        <t t-foreach="range(11)" t-as="index">
                                 <option><t t-esc="index" /></option>
                         </t>
                     </select>
@@ -65,7 +65,7 @@
                 <label class="col-md-2 col-sm-2 control-label" for="persons">Children</label>
                 <div class="col-md-2 col-sm-2">
                     <select class="form-control" name="nr_children" >
-                        <t t-foreach="range(9)" t-as="index">
+                        <t t-foreach="range(11)" t-as="index">
                                 <option><t t-esc="index" /></option>
                         </t>
                     </select>
