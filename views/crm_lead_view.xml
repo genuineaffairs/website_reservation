@@ -47,8 +47,8 @@
 					<group>
 						<field name="checkin" attrs="{'invisible': [('name','!=', 'Reservation')]}" />
 						<field name="checkout" attrs="{'invisible': [('name','!=', 'Reservation')]}" />
-						<field name="nr_adults" attrs="{'invisible': [('name','!=', 'Reservation')]}" />
-						<field name="nr_children" attrs="{'invisible': [('name','!=', 'Reservation')]}" />
+						<field name="nr_adults"  />
+						<field name="nr_children"  />
 					</group>
 					<group>
 						<field name="room" attrs="{'invisible': [('name','!=', 'Reservation')]}" readonly="1" />
