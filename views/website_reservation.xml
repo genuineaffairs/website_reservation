@@ -107,7 +107,9 @@
                 </div>
             </div>
 			
-			                <script>
+			    
+        </form>
+		    <script>
                 function validateDates(){
                         var checkin = document.forms["form"]["checkin"].value;
                         var checkout = document.forms["form"]["checkout"].value;
@@ -117,8 +119,7 @@
                         }
                         return true;
                 }
-                </script>
-        </form>
+              </script>
 </xpath>
 </template>
 	
