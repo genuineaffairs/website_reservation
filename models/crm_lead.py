@@ -16,7 +16,7 @@ class crm_lead(models.Model):
 	# Confirm reservation
 	# Opens a popup-window with the hotel.reservation form view with default-values from reservation-lead
 	@api.multi
-	def confirm(self):
+	def confirm_reservation(self):
 		# Get currency id for Chilean pesos
 		CLP_id = self.env['res.currency'].search([('name','=','CLP')]).id
 		#Convert date to datetime-format

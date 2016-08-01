@@ -29,8 +29,8 @@
             <xpath expr="//form[@string='Leads Form']" position="replace">
 			<form>
 			<header>
-				<button name="confirm" string="Confirm reservation" type="object"
-                        help="Confirm reservation" class="oe_highlight" />
+				<button name="confirm_reservation" string="Confirm Reservation" type="object"
+                        help="Confirm Reservation" class="oe_highlight" />
 			</header>
 			<sheet>
 				<div class="oe_title">
