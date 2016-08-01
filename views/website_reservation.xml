@@ -5,19 +5,8 @@
 <template id="reservation_form" name="Reservation Form" inherit_id="website_crm.contactus_form" customize_show="True">
 
 <xpath expr="//form" position="replace">
-<form action="/crm/contactus" method="post" class="form-horizontal mt32" enctype="multipart/form-data" onsubmit="return validateDates()" >
+<form action="/crm/contactus" method="post" class="form-horizontal mt32" enctype="multipart/form-data" name="form" onsubmit="return validateDates()" >
 
-			    <script>
-                function validateDates(){
-                        var checkin = document.forms["form"]["checkin"].value;
-                        var checkout = document.forms["form"]["checkout"].value;
-                        if( checkin > checkout){
-                                window.alert("Check-out date has to be greater than check-in date.");
-                                return false;
-                        }
-                        return true;
-                }
-              </script>
             <div t-attf-class="form-group #{error and 'contact_name' in error and 'has-error' or ''}">
                 <label class="col-md-3 col-sm-4 control-label" for="contact_name">Your Name</label>
                 <div class="col-md-7 col-sm-8">
@@ -121,7 +110,17 @@
 		
 			    
         </form>
-
+			    <script>
+                function validateDates(){
+                        var checkin = document.forms["form"]["checkin"].value;
+                        var checkout = document.forms["form"]["checkout"].value;
+                        if( checkin > checkout){
+                                window.alert("Check-out date has to be greater than check-in date.");
+                                return false;
+                        }
+                        return true;
+                }
+              </script>
 </xpath>
 </template>
 	
