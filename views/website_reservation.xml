@@ -23,7 +23,7 @@
                 <attribute name="onsubmit">return validateDates()</attribute>
         </xpath>
 
-	<xpath expr="//div[@class='form-group #{error and 'partner_name' in error and 'has-error' or ''}']" position="replace"> </xpath>
+	<!-- <xpath expr="//div[@class='form-group #{error and 'partner_name' in error and 'has-error' or ''}']" position="replace"> </xpath> -->
 	<xpath expr="//label[@for='name']" position="replace"> </xpath>
 	<xpath expr="//input[@name='name']" position="replace">	</xpath>
 	
