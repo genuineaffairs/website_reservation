@@ -9,6 +9,7 @@ class HotelReservation(models.Model):
 	# Add field for context from crm.lead-reservation
 	crm_message = fields.Text('Message')
 	requested_room = fields.Char('Requested room')
+	lead_id = fields.Integer('Lead ID')
 	# Override date_order to make it a date-field instead of datetime
 	date_order = fields.Date('Date Ordered',required=True,readonly=True,
 							states={'draft':[('readonly',False)]}, 
