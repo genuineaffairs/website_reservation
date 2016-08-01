@@ -7,14 +7,15 @@
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_case_tree_view_leads" />
         <field name="arch" type="xml">
-                <xpath expr="//field[@name='name']" position="after">
-                        <field name="checkin" />
-                        <field name="checkout" />
-                </xpath>
-                <xpath expr="//field[@name='contact_name']" position="after">
-                        <field name="nr_adults" />
-                        <field name="nr_children" />
-                </xpath>
+			<filter	string="Confirmed" domain="[('stage_id.name','=','Won')]" />
+            <xpath expr="//field[@name='name']" position="after">
+				<field name="checkin" />
+				<field name="checkout" />
+			</xpath>
+			<xpath expr="//field[@name='contact_name']" position="after">
+				<field name="nr_adults" />
+				<field name="nr_children" />
+			</xpath>
 
         </field>
         </record>

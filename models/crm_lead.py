@@ -34,7 +34,9 @@ class crm_lead(models.Model):
 			'view_mode': 'form',
 			'view_type': 'form',
 			'target': 'new',
-			'context': {	'default_adults': self.nr_adults,
+			'context': {	
+					'default_lead_id': self.id,
+					'default_adults': self.nr_adults,
 					'default_children' : self.nr_children,
 					'default_checkin': str_checkin,	
 					'default_checkout': str_checkout,
