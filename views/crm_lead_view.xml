@@ -7,9 +7,6 @@
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_case_tree_view_leads" />
         <field name="arch" type="xml">
-			<search>
-				<filter	string="Confirmed" domain="[('stage_id.name','=','Won')]" />
-			</search>
             <xpath expr="//field[@name='name']" position="after">
 				<field name="checkin" />
 				<field name="checkout" />
