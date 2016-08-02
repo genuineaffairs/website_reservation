@@ -1,4 +1,4 @@
-from openerp import models, fields
+from openerp import models, fields, api
 #Imports for date_order field
 from openerp.tools import DEFAULT_SERVER_DATETIME_FORMAT
 import time
@@ -14,8 +14,9 @@ class HotelReservation(models.Model):
 	date_order = fields.Date('Date Ordered',required=True,readonly=True,
 							states={'draft':[('readonly',False)]}, 
 							default=(lambda *a: time.strftime(DEFAULT_SERVER_DATETIME_FORMAT)))
-							
+	
+	@api.one
 	def special_confirm(self):
 		print "TESTING SPECIAL CONFIRM \n\n\n"
-		confirm()
+		confirm(self)
 							
