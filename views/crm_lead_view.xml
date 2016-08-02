@@ -36,7 +36,7 @@
 				<div class="oe_title">
 					<label for="name" class="oe_edit_only" />
 					<h1><field name="name" placeholder="Lead type" /></h1>
-					<p style="color:red;" attrs="{'invisible': [('stage_id.name','!=','won')]}" > - CONFIRMED</p>
+					<p style="color:red;" attrs="{'invisible': [('stage_id','!=','Won')]}" > - CONFIRMED</p>
 				</div>
 				<group>
 					<group>
