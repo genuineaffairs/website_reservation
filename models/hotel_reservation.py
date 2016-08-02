@@ -15,8 +15,12 @@ class HotelReservation(models.Model):
 							states={'draft':[('readonly',False)]}, 
 							default=(lambda *a: time.strftime(DEFAULT_SERVER_DATETIME_FORMAT)))
 	
+	# Change state of lead if reservation was generated from a lead
+	# Function is called from hotel.reservation workflow activity
 	@api.multi
-	def special_confirm(self):
-		print "TESTING SPECIAL CONFIRM"
-		print ""
+	def change_lead_state(self):
+		if(self.lead_id):
+			won_id = self.env['crm.case.stage'].search([('name','=','Won')]).id
+			lead = self.env['crm.lead'].search([('id','=',self.lead_id)])
+			lead.stage_id = won_id
 							

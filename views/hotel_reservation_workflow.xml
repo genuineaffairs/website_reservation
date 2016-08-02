@@ -1,12 +1,13 @@
 <?xml version="1.0"?>
 <openerp>
 <data>
+	<!-- Add function change_lead_state to workflow on confirmation -->
 	<record model="workflow.activity" id="hotel_reservation.act_confirm">
 		<field name="wkf_id" ref="hotel_reservation.wkf_reservation"/>
 		<field name="name">confirm</field>
 		<field name="kind">function</field>
 		<field name="action">confirmed_reservation()
-		special_confirm()</field>
+		change_lead_state()</field>
 	</record>
 </data>
 </openerp>
