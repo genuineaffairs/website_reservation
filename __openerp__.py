@@ -6,5 +6,6 @@
 	'data' : ['views/website_reservation.xml', 
 				'views/crm_lead_view.xml', 
 				'views/hotel_reservation_view.xml',
+				'views/hotel_reservation_workflow.xml',
 				'security/ir.model.access.csv'],
 }
