@@ -18,6 +18,5 @@ class HotelReservation(models.Model):
 	@api.multi
 	def special_confirm(self):
 		print "TESTING SPECIAL CONFIRM"
-		print ""
-		print ""
+		confirm(self)
 							
