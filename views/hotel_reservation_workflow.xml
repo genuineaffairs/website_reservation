@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+	<record model="workflow.activity" id="hotel_reservation.act_confirm">
+		<field name="wkf_id" ref="hotel_reservation.wkf_reservation"/>
+		<field name="name">confirm</field>
+		<field name="kind">function</field>
+		<field name="action">confirmed_reservation()
+		special_confirm()</field>
+	</record>
+</data>
+</openerp>
