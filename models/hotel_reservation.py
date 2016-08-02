@@ -15,8 +15,9 @@ class HotelReservation(models.Model):
 							states={'draft':[('readonly',False)]}, 
 							default=(lambda *a: time.strftime(DEFAULT_SERVER_DATETIME_FORMAT)))
 	
-	@api.one
+	@api.multi
 	def special_confirm(self):
-		print "TESTING SPECIAL CONFIRM \n\n\n"
-		confirm(self)
+		print "TESTING SPECIAL CONFIRM"
+		print ""
+		print ""
 							
