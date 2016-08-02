@@ -31,7 +31,7 @@
 			<header>
 				<button name="confirm_reservation" string="Confirm Reservation" type="object"
                         help="Confirm Reservation" class="oe_highlight" attrs="{'invisible': [('name','!=', 'Reservation')]}" />
-				<field name="state" widget="status" />
+				<field name="stage_id" widget="status" />
 			</header>
 			<sheet>
 				<div class="oe_title">
