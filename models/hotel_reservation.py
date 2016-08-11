@@ -129,3 +129,4 @@ class RoomReservaionSummary(models.Model):
 			self.summary_header = str(main_header)
 			self.room_summary = str(all_room_detail)
 		return res
+"""
