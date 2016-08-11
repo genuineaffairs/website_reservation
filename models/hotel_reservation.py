@@ -42,7 +42,7 @@ class HotelReservation(models.Model):
 			won_id = self.env['crm.case.stage'].search([('name','=','Won')]).id
 			lead = self.env['crm.lead'].search([('id','=',self.lead_id)])
 			lead.stage_id = won_id
-					"""		
+"""		
 class RoomReservaionSummary(models.Model):
 	_inherit = 'room.reservation.summary'
 	
@@ -129,4 +129,4 @@ class RoomReservaionSummary(models.Model):
 			self.summary_header = str(main_header)
 			self.room_summary = str(all_room_detail)
 		return res
-		"""
+"""
