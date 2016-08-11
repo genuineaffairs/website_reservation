@@ -22,7 +22,6 @@ class HotelReservation(models.Model):
 			vals = {}
 		if self._context is None:
 			self._context = {}
-		print vals['reservation_no']
 		vals['reservation_no'] = self.env['ir.sequence'].get('hotel.reservation')
 		print vals['reservation_no']
 		# Set checkin/out times greater than 00:00:00 UTC to display the correct dates with timezone
