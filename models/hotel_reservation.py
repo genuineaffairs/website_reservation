@@ -15,14 +15,14 @@ class HotelReservation(models.Model):
 	date_order = fields.Date('Date Ordered',required=True,readonly=True,
 							states={'draft':[('readonly',False)]}, 
 							default=(lambda *a: time.strftime(DEFAULT_SERVER_DATETIME_FORMAT)))
-	"""
+	
 	@api.model
 	def create(self, vals):	
 		if not vals:
 			vals = {}
 		if self._context is None:
 			self._context = {}
-		vals['reservation_no'] = self.env['ir.sequence'].get('hotel.reservation')
+		#vals['reservation_no'] = self.env['ir.sequence'].get('hotel.reservation')
 		# Set checkin/out times greater than 00:00:00 UTC to display the correct dates with timezone
 		# Checkin time needs to be greater than checkout time so one night is less then 24hours to create folio correctly
 		temp_checkin = fields.Datetime.from_string(vals['checkin'])
@@ -33,7 +33,7 @@ class HotelReservation(models.Model):
 		vals['checkout'] = temp_checkout
 
 		return super(HotelReservation, self).create(vals)
-	"""	
+	
 	# Change state of lead if reservation was generated from a lead
 	# Function is called from hotel.reservation workflow activity
 	@api.multi
