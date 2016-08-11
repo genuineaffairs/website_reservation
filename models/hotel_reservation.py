@@ -33,7 +33,7 @@ class HotelReservation(models.Model):
 		vals['checkin'] = temp_checkin
 		vals['checkout'] = temp_checkout
 		print vals['reservation_no']
-		"""return super(HotelReservation, self).create(vals)"""
+		return super(HotelReservation, self).create(vals)
 		
 	# Change state of lead if reservation was generated from a lead
 	# Function is called from hotel.reservation workflow activity
