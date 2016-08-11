@@ -39,21 +39,5 @@
 	</field>
 	</record>
 	
-	<!-- Reservation Summary form view -->
-	<record model="ir.ui.view" id="room_reservation_summary_form_view">
-	<field name="name">room.reservation.summary.form</field>
-	<field name="model">room.reservation.summary</field>
-	<field name="inherit_id" ref="hotel_reservation.room_reservation_summary_form_view" />
-	<field name="arch" type="xml">
-		<!-- Hide time in view for datetime-fields -->
-		<xpath expr="//field[@name='date_from']" position="attributes">
-			<attribute name="widget">date</attribute>
-		</xpath>
-		<xpath expr="//field[@name='date_to']" position="attributes">
-			<attribute name="widget">date</attribute>
-		</xpath>		
-	</field>
-	</record>
-	
 </data>
 </openerp>
